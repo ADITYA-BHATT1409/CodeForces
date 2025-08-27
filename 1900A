@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Solve {
+    public static void main(String[]args){
+        Solve solve=new Solve();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int []arr=new int[n];
+        for(int i=0;i<n;i++){
+            int len=sc.nextInt();
+            String s=sc.next();
+            arr[i]=(collectWater(s));
+        }
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]);
+        }
+    }
+    public static int collectWater(String s){
+        if(s.contains("...")){
+             return 2;
+        }
+        int count=0;
+        for (int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if (c=='.') count++;
+        }
+        return count;
+    }
+}
+    
+
